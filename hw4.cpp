@@ -16,7 +16,7 @@ int accumulate(list_t l, int (*fn)(int, int), int base)
   }
 }
 
-int static SumHelper (list_t list, int counter){
+static int SumHelper (list_t list, int counter){
 if (list_isEmpty(list)){ // if empty lidt, return current counter
   return counter; 
 }
@@ -30,18 +30,24 @@ int sum(list_t list){
  
 return SumHelper(list, 0);
 }
+
+
+
+
 static int ProductHelper(list_t list, int counter){
 if (list_isEmpty(list)){ // if empty lidt, return current counter
+cout << "list empty"<< endl ;
   return counter; 
 }
-else 
-counter *=list_first(list);
+else
+counter = counter * list_first(list);
 return ProductHelper(list_rest(list),counter); 
 
 }
+
 int product(list_t list){
 
-  return ProductHelper(list,0);
+  return ProductHelper(list,1);
 }
 
 

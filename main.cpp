@@ -27,7 +27,7 @@ bool notByFour(int i)
 int main() {
     list_t original = list_make();
     list_t rotated = list_make();
-    list_t testlist;
+    list_t testlist=list_make();
 
     const int largest = 7;
     const int steps = 4+largest;
@@ -39,13 +39,18 @@ int main() {
       rotated = list_make((i+steps)%largest, rotated);
     }
 
+     for (int j=1; j < 11 ; j++) {
+      testlist = list_make(j, testlist);
+    }
+
     //testlist = rotate(original, steps);
     //bool results  = ListEqual(testlist, rotated);
 
   list_print(rotated);
   list_print(original);
+  list_print(testlist);
   cout << sum(original)<< endl ; 
-  cout << product(original)<< endl ;
+  cout << product(testlist)<< endl ;
 
 
 
