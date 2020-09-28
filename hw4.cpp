@@ -30,7 +30,19 @@ int sum(list_t list){
  
 return SumHelper(list, 0);
 }
+static int ProductHelper(list_t list, int counter){
+if (list_isEmpty(list)){ // if empty lidt, return current counter
+  return counter; 
+}
+else 
+counter *=list_first(list);
+return ProductHelper(list_rest(list),counter); 
 
+}
+int product(list_t list){
+
+  return ProductHelper(list,0);
+}
 
 
 

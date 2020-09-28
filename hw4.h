@@ -7,21 +7,20 @@
 
 
 static int SumHelper(list_t list, int counter); 
-
 int sum(list_t list);
     /* 
     // EFFECTS: returns the sum of each element in list
     //          zero if the list is empty.
     */ 
-//static int SumHelper(list_t list, int counter); 
-// sum helper 
 
+//*****************************************************************
+static int ProductHelper(list_t list, int counter);
 int product(list_t list);
     /* 
     // EFFECTS: returns the product of each element in list
     //          one if the list is empty.
     */
-
+//***************************************************************
 int accumulate(list_t list, int (*fn)(int, int), int identity);
     /*
     // REQUIRES: fn must be associative.

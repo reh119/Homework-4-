@@ -36,16 +36,16 @@ int main() {
 
     for (int i = largest-1; i>=0; i--) {
       original = list_make(i, original);
-      //rotated = list_make((i+steps)%largest, rotated);
+      rotated = list_make((i+steps)%largest, rotated);
     }
-//cout << original;
-   sum(original);
 
     //testlist = rotate(original, steps);
     //bool results  = ListEqual(testlist, rotated);
 
-  //list_print(rotated);
-  //list_print(testlist);
+  list_print(rotated);
+  list_print(original);
+  cout << sum(original)<< endl ; 
+  cout << product(original)<< endl ;
 
 
 
