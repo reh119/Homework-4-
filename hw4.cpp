@@ -15,7 +15,7 @@ int accumulate(list_t l, int (*fn)(int, int), int base)
     return accumulate(list_rest(l), fn, fn(base, list_first(l)));
   }
 }
-
+//****************************************************************************//
 static int SumHelper (list_t list, int counter){
 if (list_isEmpty(list)){ // if empty lidt, return current counter
   return counter; 
@@ -32,7 +32,7 @@ return SumHelper(list, 0);
 }
 
 
-
+//****************************************************************************//
 
 static int ProductHelper(list_t list, int counter){
 if (list_isEmpty(list)){ // if empty lidt, return current counter
@@ -49,7 +49,25 @@ int product(list_t list){
 
   return ProductHelper(list,1);
 }
+//list_first-
+//list_rest
+//**************************************************************************//
+static list_t ReverseHelper(list_t list, list_t reverse_list){
+if (list_isEmpty(list)){ // if empty lidt, return current counter
+cout << "list emptyreverse"<< endl ;
+  return reverse_list; 
+}
+else {
+reverse_list=list_make(list_first(list),reverse_list);
+return ReverseHelper(list_rest(list),reverse_list);
+}
+}
 
+list_t reverse(list_t list){ // type list_t func. just changes order of list
+  list_t reverse_list = list_make();
+  return ReverseHelper(list_t(list),reverse_list);
+
+}
 
 
 // list_first returns an int 

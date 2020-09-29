@@ -40,7 +40,7 @@ int accumulate(list_t list, int (*fn)(int, int), int identity);
     // The "identity" argument is typically the value for which 
     // fn(X, identity) == X, for any X.
     */ 
-
+static list_t ReverseHelper(list_t list, list_t reverse_list);
 list_t reverse(list_t list);
     /*
     // EFFECTS: returns the reverse of list
