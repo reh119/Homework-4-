@@ -47,7 +47,7 @@ list_t reverse(list_t list);
     //
     // For example: the reverse of ( 3 2 1 ) is ( 1 2 3 )
     */
-
+static list_t AppendHelper(list_t first,list_t second,list_t new_list);
 list_t append(list_t first, list_t second);
     /*
     // EFFECTS: returns the list (first second)

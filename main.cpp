@@ -55,9 +55,9 @@ int main() {
   //list_print(original);
  // list_print(testlist);
   list_print(testlist2); // 1-11
-  cout << sum(original)<< endl ; 
-  cout << product(testlist)<< endl ;
-  cout << reverse(testlist2)<< endl ;
+  // cout << sum(original)<< endl ; 
+  // cout << product(testlist)<< endl ;
+  // cout << reverse(testlist2)<< endl ;
 
 
 
