@@ -29,6 +29,7 @@ int main() {
     list_t rotated = list_make();
     list_t testlist=list_make(); // sample list
     list_t testlist2=list_make(); // sample list 
+    list_t oddtestlist=list_make(); // sample list 
 
     const int largest = 7;
     const int steps = 4+largest;
@@ -47,6 +48,7 @@ int main() {
     for (int j=11; j > 0 ; j--) {
       testlist2 = list_make(j, testlist2);
     }
+    
 
     //testlist = rotate(original, steps);
     //bool results  = ListEqual(testlist, rotated);
@@ -54,8 +56,10 @@ int main() {
   //list_print(rotated);
   //list_print(original);
  // list_print(testlist);
-  list_print(testlist2); // 1-11
-  // cout << sum(original)<< endl ; 
+   list_print(testlist2); // 1-11
+   filter_odd(testlist2); // calls filter odd func
+  list_print(testlist2); // sjpuld output only odd
+ // cout << sum(original)<< endl ; 
   // cout << product(testlist)<< endl ;
   // cout << reverse(testlist2)<< endl ;
 

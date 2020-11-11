@@ -70,7 +70,7 @@ return ReverseHelper(list_rest(list),reverse_list);
 }
 
 list_t reverse(list_t list){ // type list_t func. just changes order of list
-  list_t reverse_list = list_make();
+  list_t reverse_list = list_make(); // returning empty list to reverselist 
   return ReverseHelper(list_t(list),reverse_list);
 
 }
@@ -78,20 +78,15 @@ list_t reverse(list_t list){ // type list_t func. just changes order of list
 
 
 static list_t AppendHelper(list_t first,list_t second,list_t new_list){
-if (!list_isEmpty(first)){
+  if (!list_isEmpty(first)){
   new_list=list_make(list_first(first),new_list);
   return AppendHelper(list_rest(first),second,new_list);
-}
+  }
 
-}
+ }
 
-
-
-// first is list
-// second is another list 
 
 list_t append (list_t first, list_t second){
-
 list_t new_list=list_make(); // returning an empty list into new_List
 
 if (list_isEmpty(first)&&list_isEmpty(second)){
@@ -105,11 +100,33 @@ if (list_isEmpty(second)){
   return first;
 }
 return AppendHelper(first,second, new_list);
+}
 
 
 
 
+// Odd filter function ///////////////////////////////////////////////
 
+
+
+static list_t filter_OddHelper(list_t list, list_t odd_list2) {
+  int num = list_first(list); 
+   if (!list_isEmpty(list)){ 
+     return odd_list2; 
+}
+else{
+ if (num%2 != 0){ 
+return filter_OddHelper(list_rest(list),odd_list2);
+ }
+}
+}
+ 
+
+
+
+list_t filter_odd(list_t list){
+    list_t odd_list2=list_make(); // returns empty list into 
+     return filter_OddHelper(list, odd_list2); 
 }
 
 // list_first returns an int 

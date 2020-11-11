@@ -52,8 +52,8 @@ list_t append(list_t first, list_t second);
     /*
     // EFFECTS: returns the list (first second)
     */ 
-
-list_t filter_odd(list_t list);
+static list_t filter_OddHelper(list_t list, list_t odd_list2); // takes original list and new empty list
+list_t filter_odd(list_t list); // takes list 
     /*
     // EFFECTS: returns a new list containing only the elements of the
     //          original list which are odd in value, 
